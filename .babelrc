@@ -1,0 +1,32 @@
+{
+  "presets": [
+    "@babel/preset-env"
+  ],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "@": "./src",
+          "@@": "./"
+        }
+      }
+    ],
+    [
+      "add-module-exports"
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    [
+      "inline-json-import",
+      {}
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+version: '3'
+
+# Specify App
+services:
+  vimiss-portal-server:
+    image: registry.gitlab.com/gitlab-koolsoft-dev/vimiss-portal-server:latest
+    build:
+      context: .
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 6001:80
+    environment:
+      - NODE_ENV=production
+    restart: always
